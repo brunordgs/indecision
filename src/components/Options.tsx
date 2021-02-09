@@ -68,42 +68,45 @@ export default function Options() {
 				className="decision"
 			/>
 
-			<Button
-				value="Remove all"
-				onClick={() => setOptions([])}
-				className="button-link"
-			/>
-
-			<p>
-				{options.length > 0
-					? 'Your options'
-					: 'Add an option to get started'}
-			</p>
-
-			{options.map((option, index) => {
-				return (
-					<div key={index}>
-						<span>{option}</span>
-						<button
-							onClick={() => handleRemoveOption(option)}
-							className="button-link"
-						>
-							Remove
-						</button>
-					</div>
-				);
-			})}
-
-			{messages && messages}
-			<form onSubmit={handleSubmit}>
-				<input
-					type="text"
-					value={input}
-					onChange={(e) => setInput(e.target.value)}
+			<div className="widget-header">
+				<h3>Your options</h3>
+				<Button
+					value="Remove all"
+					onClick={() => setOptions([])}
+					className="button--link"
 				/>
-				<button className="button">Add option</button>
-			</form>
+			</div>
 
+			<div className="widget">
+				{options.length === 0 && (
+					<p className="option__text">Add an option to get started</p>
+				)}
+
+				{options.map((option, index) => {
+					return (
+						<div key={index} className="option">
+							<span>{option.toLowerCase()}</span>
+							<button
+								onClick={() => handleRemoveOption(option)}
+								className="button--link"
+							>
+								Remove
+							</button>
+						</div>
+					);
+				})}
+
+				{messages && <p className="add-option-error">{messages}</p>}
+				<form onSubmit={handleSubmit} className="add-option">
+					<input
+						type="text"
+						value={input}
+						onChange={(e) => setInput(e.target.value)}
+						className="add-option__input"
+					/>
+					<Button value="Add option" className="button"/>
+				</form>
+			</div>
 			<ModalOption
 				selectedOption={selectedOption}
 				handleCloseModal={handleCloseModal}

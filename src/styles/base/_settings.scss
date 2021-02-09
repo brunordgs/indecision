@@ -3,6 +3,7 @@ $background: #282a36;
 $off-black: #20222b;
 $off-white: #a5afd7;
 $purple: #bd93f9;
+$blue: #44475a;
 $white: #f8f8f2;
 
 /* Spacing */
@@ -10,3 +11,9 @@ $s-size: 1.2rem;
 $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
+
+/* Breakpoints */
+$desktop-breakpoint: 45rem;
+
+/* Border */
+$s-radius: 0.4rem;
