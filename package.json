@@ -1,7 +1,7 @@
 {
 	"name": "indecision",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "index.tsx",
 	"license": "MIT",
 	"scripts": {
 		"start": "parcel ./src/index.html"
@@ -16,6 +16,10 @@
 	"devDependencies": {
 		"@babel/core": "^7.12.10",
 		"@babel/preset-react": "^7.12.10",
-		"sass": "^1.32.6"
+		"@types/react": "^17.0.1",
+		"@types/react-dom": "^17.0.0",
+		"@types/react-modal": "^3.12.0",
+		"sass": "^1.32.6",
+		"typescript": "^4.1.3"
 	}
 }

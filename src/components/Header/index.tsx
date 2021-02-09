@@ -1,6 +1,11 @@
 import React from 'react';
 
-export default function Header({ title, subtitle }) {
+type Props = {
+	title: string;
+	subtitle: string;
+}
+
+export default function Header({ title, subtitle }: Props) {
 	return (
 		<div className="header">
 			<div className="container">

@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import ModalOption from './Modal';
 import Button from './ui/Button';
 
 export default function Options() {
 	const [input, setInput] = useState('');
-	const [options, setOptions] = useState([]);
+	const [options, setOptions] = useState<Array<string>>([]);
 	const [messages, setMessages] = useState('');
-	const [selectedOption, setSelectedOption] = useState(undefined);
+	const [selectedOption, setSelectedOption] = useState<string | undefined>(
+		undefined
+	);
 
 	useEffect(() => {
 		const options = localStorage.getItem('options');
-		const json = JSON.parse(options);
 
 		if (options) {
+			const json = JSON.parse(options);
+
 			setOptions(json);
 		}
 	}, []);
@@ -23,7 +26,7 @@ export default function Options() {
 		localStorage.setItem('options', json);
 	}, [options]);
 
-	function handleSubmit(e) {
+	function handleSubmit(e: FormEvent) {
 		e.preventDefault();
 
 		setInput('');
@@ -48,7 +51,7 @@ export default function Options() {
 		setSelectedOption(option);
 	}
 
-	function handleRemoveOption(option) {
+	function handleRemoveOption(option: string) {
 		return setOptions(options.filter((item) => item !== option));
 	}
 
@@ -64,7 +67,7 @@ export default function Options() {
 				disabled={!options.length}
 				className="decision"
 			/>
-			
+
 			<Button
 				value="Remove all"
 				onClick={() => setOptions([])}
@@ -96,7 +99,7 @@ export default function Options() {
 				<input
 					type="text"
 					value={input}
-					onInput={(e) => setInput(e.target.value)}
+					onChange={(e) => setInput(e.target.value)}
 				/>
 				<button className="button">Add option</button>
 			</form>
