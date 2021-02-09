@@ -1,0 +1,39 @@
+.decision {
+	background: $purple;
+	color: $white;
+	border-bottom: 0.6rem solid darken($purple, 5%);
+	border-radius: 0.2rem;
+	font-size: $l-size;
+	font-weight: 700;
+	margin-bottom: $xl-size;
+	padding: 2.4rem;
+	width: 100%;
+	transition: background-color 0.4s;
+
+	&:hover:enabled {
+		background: darken($purple, 5%);
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
+}
+
+.button {
+	background: $purple;
+	color: $white;
+	font-weight: 500;
+	padding: $s-size;
+	transition: background-color 0.4s;
+
+	&:hover:enabled {
+		background: darken($purple, 5%);
+	}
+}
+
+.button-link {
+	background: none;
+	color: $off-white;
+	padding: 0;
+	font-weight: 500;
+}

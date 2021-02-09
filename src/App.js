@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/ui/Header';
+import Header from './components/Header';
 import Options from './components/Options';
 
 export default function App() {
@@ -9,7 +9,9 @@ export default function App() {
 				title="Indecision"
 				subtitle="Put your decision in the hands of a computer."
 			/>
-			<Options />
+			<div className="container">
+				<Options />
+			</div>
 		</>
 	);
 }
