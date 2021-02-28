@@ -1,8 +1,7 @@
-import React from 'react';
-import Header from './components/Header';
-import Options from './components/Options';
+import Options from "../components/Options";
+import Header from "../components/ui/Header";
 
-export default function App() {
+export default function Home() {
 	return (
 		<>
 			<Header

@@ -1,5 +1,5 @@
-import React, { FormEvent, useEffect, useState } from 'react';
-import ModalOption from './Modal';
+import { FormEvent, useEffect, useState } from 'react';
+import ModalOption from './ui/Modal';
 import Button from './ui/Button';
 
 export default function Options() {
