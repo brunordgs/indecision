@@ -5,8 +5,12 @@ Do not you know what you want to do? Let Indecision app decide for you.
 ### Language
 - TypeScript
 ### Front-end
-- React
+- Next.js
 - SCSS
+- React Hooks
+
+### Other tools
+- Local Storage (for now)
 
 #
 ## Getting started
