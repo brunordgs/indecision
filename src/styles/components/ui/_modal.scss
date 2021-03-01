@@ -43,4 +43,8 @@
 	margin-bottom: $l-size;
 	
 	word-break: break-all;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }

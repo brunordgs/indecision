@@ -14,8 +14,7 @@
 		"react-modal": "^3.12.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.12.10",
-		"@babel/preset-react": "^7.12.10",
+		"@types/node": "^14.14.31",
 		"@types/react": "^17.0.1",
 		"@types/react-dom": "^17.0.0",
 		"@types/react-modal": "^3.12.0",
