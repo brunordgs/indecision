@@ -25,7 +25,7 @@ yarn or npm i
 ```
 And finally, run server:
 ```bash
-yarn start or npm start
+yarn dev or npm dev
 ```
 
 Server will listen at: [localhost:1234](https://localhost:1234).
