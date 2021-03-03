@@ -7,19 +7,19 @@
 		justify-content: center;
 
 		transition: opacity 0.2s ease-in-out;
-	}
 
-	&.ReactModal__Overlay--after-open {
-		opacity: 1;
-	}
+		&--after-open {
+			opacity: 1;
+		}
 
-	&.ReactModal__Overlay--before-close {
-		opacity: 0;
-	}
-}
+		&--before-close {
+			opacity: 0;
+		}
 
-.ReactModal__Overlay.ReactModal__Overlay--after-open {
-	background: rgba(0, 0, 0, 0.6) !important;
+		&--after-open {
+			background: rgba(0, 0, 0, 0.8) !important;
+		}
+	}
 }
 
 .modal {
@@ -31,20 +31,20 @@
 	text-align: center;
 
 	border-radius: $s-radius;
-}
 
-.modal__title {
-	margin-bottom: $m-size;
-}
+	&__title {
+		margin-bottom: $m-size;
+	}
 
-.modal__content {
-	font-size: 2rem;
-	font-weight: 300;
-	margin-bottom: $l-size;
-	
-	word-break: break-all;
+	&__content {
+		font-size: 2rem;
+		font-weight: 300;
+		margin-bottom: $l-size;
 
-	&::first-letter {
-		text-transform: uppercase;
+		word-break: break-all;
+
+		&::first-letter {
+			text-transform: uppercase;
+		}
 	}
 }

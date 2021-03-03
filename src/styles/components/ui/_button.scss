@@ -30,13 +30,13 @@
 	&:hover:enabled {
 		background: darken($purple, 5%);
 	}
-}
 
-.button--link {
-	background: none;
-	color: $off-white;
-	padding: 0;
-	font-weight: 500;
+	&--link {
+		background: none;
+		color: $off-white;
+		padding: 0;
+		font-weight: 500;
+	}
 }
 
 @media (min-width: $desktop-breakpoint) {
