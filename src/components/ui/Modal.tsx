@@ -1,15 +1,15 @@
-import Modal from 'react-modal';
+import { default as ModalOption } from 'react-modal';
 import Button from './Button';
 
 type Props = {
 	selectedOption: string | any;
 	handleCloseModal: () => void;
-}
+};
 
-export default function ModalOption({ selectedOption, handleCloseModal }: Props) {
+export default function Modal({ selectedOption, handleCloseModal }: Props) {
 	return (
 		<>
-			<Modal
+			<ModalOption
 				isOpen={!!selectedOption}
 				onRequestClose={handleCloseModal}
 				contentLabel="Selected option"
@@ -22,10 +22,8 @@ export default function ModalOption({ selectedOption, handleCloseModal }: Props)
 						{selectedOption.toLowerCase()}
 					</p>
 				)}
-				<Button onClick={handleCloseModal} className="button">
-					Okay
-				</Button>
-			</Modal>
+				<Button onClick={handleCloseModal}>Okay</Button>
+			</ModalOption>
 		</>
 	);
 }
