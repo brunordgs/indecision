@@ -6,10 +6,10 @@ Do not you know what you want to do? Let Indecision app decide for you.
 - TypeScript
 ### Front-end
 - Next.js
-- SCSS
-- React Hooks
+- SASS
 
-### Other tools
+### Other stuff
+- OAuth
 - Local Storage (for now)
 
 #
@@ -25,7 +25,7 @@ yarn or npm i
 ```
 And finally, run server:
 ```bash
-yarn dev or npm dev
+yarn dev or npm run dev
 ```
 
-Server will listen at: [localhost:1234](https://localhost:1234).
+Server will listen at: [localhost:3000](https://localhost:3000).
