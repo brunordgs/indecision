@@ -1,3 +1,3 @@
-export default function Button({ ...props }) {
-	return <button {...props} />
+export default function Button({ variant = 'button', ...props }) {
+	return <button className={variant} {...props} />;
 }

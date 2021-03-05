@@ -18,13 +18,13 @@ export default function InsertOption({ options, setOptions }: Props) {
 		const option = input.trim();
 
 		if (!option) {
-			return setMessages('Enter a valid value');
+			setMessages('Enter a valid value');
 		} else if (options.indexOf(option) !== -1) {
-			return setMessages('This option already exists');
+			setMessages('This option already exists');
 		}
 
 		if (options.length === 3) {
-			return setMessages('Options limit exceeded :(');
+			setMessages('Options limit exceeded :(');
 		}
 
 		setMessages('');
@@ -41,7 +41,7 @@ export default function InsertOption({ options, setOptions }: Props) {
 					onChange={(e) => setInput(e.target.value)}
 					className="add-option__input"
 				/>
-				<Button className="button">Add option</Button>
+				<Button>Add option</Button>
 			</form>
 		</>
 	);

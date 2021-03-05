@@ -16,7 +16,7 @@ export default function Action({ options, setSelectedOption }: Props) {
 		<Button
 			onClick={handlePick}
 			disabled={!options.length}
-			className="decision"
+			variant="decision"
 		>
 			What should I do?
 		</Button>
