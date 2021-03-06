@@ -44,7 +44,9 @@
 	color: $white;
 	font-size: $m-size;
 	font-weight: 500;
-	
+
+	display: flex;
+
 	padding: $s-size;
 	border-radius: $s-radius;
 
@@ -52,6 +54,10 @@
 
 	&:hover {
 		background: rgba(0, 0, 0, 0.5);
+	}
+
+	> svg {
+		margin-right: $s-size;
 	}
 }
 
