@@ -4,16 +4,20 @@
 	"main": "index.tsx",
 	"license": "MIT",
 	"scripts": {
-		"dev": "next dev -p 1234"
+		"dev": "next dev"
 	},
 	"dependencies": {
+		"@vercel/node": "^1.9.0",
+		"axios": "^0.21.1",
 		"next": "^10.0.7",
+		"next-auth": "^3.7.0",
 		"normalize.scss": "^0.1.0",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-modal": "^3.12.1"
 	},
 	"devDependencies": {
+		"@types/next-auth": "^3.1.25",
 		"@types/node": "^14.14.31",
 		"@types/react": "^17.0.1",
 		"@types/react-dom": "^17.0.0",
