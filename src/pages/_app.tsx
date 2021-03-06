@@ -1,15 +1,14 @@
 import '../styles/index.scss';
 import 'normalize.scss/normalize.scss';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
+import { Provider } from 'next-auth/client';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
-			<Head>
-				<title>Indecision</title>
-			</Head>
+			<Provider session={pageProps.session}>
 				<Component {...pageProps} />
+			</Provider>
 		</>
 	);
 }
