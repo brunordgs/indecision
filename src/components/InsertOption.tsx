@@ -2,8 +2,8 @@ import { FormEvent, useState } from 'react';
 import Button from './ui/Button';
 
 type Props = {
-	options: Array<string>;
-	setOptions: (options: Array<string>) => void;
+	options: string[];
+	setOptions: (options: any) => void;
 };
 
 export default function InsertOption({ options, setOptions }: Props) {
@@ -18,19 +18,20 @@ export default function InsertOption({ options, setOptions }: Props) {
 		const option = input.trim();
 
 		if (!option) {
-			setMessages('Enter a valid value');
+			return setMessages('Enter a valid value');
 		} else if (options.indexOf(option) !== -1) {
-			setMessages('This option already exists');
+			return setMessages('This option already exists');
 		}
 
 		if (options.length === 3) {
-			setMessages('Options limit exceeded :(');
+			return setMessages('Options limit exceeded :(');
 		}
 
 		setMessages('');
 
-		return setOptions((options) => [...options, option]);
+		return setOptions((options: string[]) => [...options, option]);
 	}
+
 	return (
 		<>
 			{messages && <p className="add-option-error">{messages}</p>}

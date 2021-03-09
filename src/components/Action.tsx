@@ -1,7 +1,7 @@
 import Button from './ui/Button';
 
 type Props = {
-	options: Array<string>;
+	options: string[];
 	setSelectedOption: (option: string) => void;
 };
 

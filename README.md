@@ -10,7 +10,7 @@ Do not you know what you want to do? Let Indecision app decide for you.
 
 ### Other stuff
 - OAuth
-- Local Storage (for now)
+- Local Storage
 
 #
 ## Getting started

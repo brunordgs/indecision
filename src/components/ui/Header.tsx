@@ -1,6 +1,4 @@
 import { signOut, useSession } from 'next-auth/client';
-import { useRouter } from 'next/dist/client/router';
-import { useEffect } from 'react';
 import Button from './Button';
 
 type Props = {
@@ -10,13 +8,6 @@ type Props = {
 
 export default function Header({ title, subtitle }: Props) {
 	const [session] = useSession();
-	const router = useRouter();
-
-	useEffect(() => {
-		if (!session) {
-			router.push('/');
-		}
-	}, [session]);
 
 	return (
 		<div className="header">
@@ -30,15 +21,21 @@ export default function Header({ title, subtitle }: Props) {
 					</section>
 					<section>
 						{session && (
-							<>
-								{
-									<span>
-										Hello,{' '}
-										{session.user.name?.split(' ')[0]}
-									</span>
-								}
-								<Button onClick={signOut}>Logout</Button>
-							</>
+							<div className="header__info">
+								<div className="header__info-content">
+								<span>
+									Hello, {session.user.name?.split(' ')[0]}
+								</span>
+								<img
+									src={session.user.image as string}
+									alt="GitHub profile picture"
+									className="header__info-image"
+								/>
+								</div>
+								<Button onClick={signOut} variant="link">
+									Logout
+								</Button>
+							</div>
 						)}
 					</section>
 				</div>

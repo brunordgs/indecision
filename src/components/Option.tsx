@@ -1,8 +1,8 @@
 import Button from './ui/Button';
 
 type Props = {
-	options: Array<string>;
-	setOptions: (options: Array<string>) => void;
+	options: string[];
+	setOptions: (options: string[]) => void;
 };
 
 export default function Option({ options, setOptions }: Props) {
@@ -12,6 +12,9 @@ export default function Option({ options, setOptions }: Props) {
 
 	return (
 		<>
+			{options.length === 0 && (
+				<p className="option__text">Add an option to get started</p>
+			)}
 			{options.map((option, index) => {
 				return (
 					<div key={index} className="option">

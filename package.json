@@ -7,8 +7,6 @@
 		"dev": "next dev"
 	},
 	"dependencies": {
-		"@vercel/node": "^1.9.0",
-		"axios": "^0.21.1",
 		"next": "^10.0.7",
 		"next-auth": "^3.7.0",
 		"normalize.scss": "^0.1.0",

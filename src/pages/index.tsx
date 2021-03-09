@@ -23,35 +23,19 @@ export default function Page() {
 				</title>
 			</Head>
 			{!session && (
-				<main>
-					<section className="">
-						<img src="/images/symbol.svg" alt="Background image" />
-					</section>
-
-					<section className="">
-						<h1>Indecision</h1>
-					</section>
-
-					<section className="">
-						<h1>Welcome</h1>
-
-						<span className="">
-							<img
-								src="/images/icons/github.svg"
-								alt="GitHub logo"
-							/>
-
-							<h2>You can do something :)</h2>
-						</span>
-					</section>
-
-					<section>
-						<Button onClick={signIn} variant="github">
-							<GitHub width={24} height={24} fill="#fff" />
-							Login with GitHub
-						</Button>
-					</section>
-				</main>
+				<div
+					style={{
+						height: '100vh',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+					}}
+				>
+					<Button onClick={signIn} variant="github">
+						<GitHub width={24} height={24} fill="#fff" />
+						Login with GitHub
+					</Button>
+				</div>
 			)}
 		</>
 	);
