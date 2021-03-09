@@ -61,6 +61,16 @@
 	}
 }
 
+.link {
+	background: none;
+	transition: color 0.4s;
+	padding: 0;
+
+	&:hover {
+		color: $red;
+	}
+}
+
 @media (min-width: $desktop-breakpoint) {
 	.decision {
 		margin-bottom: $xl-size;
