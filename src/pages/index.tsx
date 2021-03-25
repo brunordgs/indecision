@@ -3,7 +3,7 @@ import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import Button from '../components/ui/Button';
-import GitHub from '../../public/images/icons/GitHub';
+import GitHub from '../../public/icons/GitHub';
 
 export default function Page() {
 	const [session] = useSession();
