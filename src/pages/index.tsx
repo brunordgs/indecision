@@ -1,4 +1,4 @@
-import { signIn, useSession } from 'next-auth/client';
+import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import { useEffect } from 'react';
@@ -6,7 +6,7 @@ import Button from '../components/ui/Button';
 import GitHub from '../../public/icons/GitHub';
 
 export default function Page() {
-	const [session] = useSession();
+	const { data: session } = useSession();
 	const router = useRouter();
 
 	useEffect(() => {
@@ -18,9 +18,7 @@ export default function Page() {
 	return (
 		<>
 			<Head>
-				<title>
-					Indecision. Indencision It's not a decision / Indecision
-				</title>
+				<title>Indecision. Indencision It's not a decision / Indecision</title>
 			</Head>
 			{!session && (
 				<div

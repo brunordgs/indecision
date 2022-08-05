@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers';
+import GitHubProvider from 'next-auth/providers/github';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 export default (req: NextApiRequest, res: NextApiResponse) =>
 	NextAuth(req, res, {
 		providers: [
-			Providers.GitHub({
+			GitHubProvider({
 				clientId: process.env.GITHUB_ID as string,
 				clientSecret: process.env.GITHUB_SECRET as string,
 			}),

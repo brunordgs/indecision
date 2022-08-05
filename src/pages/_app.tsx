@@ -1,7 +1,7 @@
 import '../styles/index.scss';
 import 'normalize.scss/normalize.scss';
 import { AppProps } from 'next/app';
-import { Provider } from 'next-auth/client';
+import { SessionProvider } from 'next-auth/react';
 import { useEffect } from 'react';
 import { useRouter } from 'next/dist/client/router';
 
@@ -17,9 +17,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<>
-			<Provider session={session}>
+			<SessionProvider session={session}>
 				<Component {...pageProps} />
-			</Provider>
+			</SessionProvider>
 		</>
 	);
 }
