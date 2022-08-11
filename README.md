@@ -1,5 +1,5 @@
 # Indecision
-Do not you know what you want to do? Let Indecision app decide for you.
+Don't you know what you want to do? Let Indecision app decide for you.
 
 ## Technologies
 ### Language
