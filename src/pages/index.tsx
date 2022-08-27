@@ -1,40 +1,50 @@
-import { signIn, useSession } from 'next-auth/react';
-import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
-import { useEffect } from 'react';
-import Button from '../components/ui/Button';
-import GitHub from '../../public/icons/GitHub';
+import { useEffect, useState } from 'react';
+import Action from '../components/Action';
+import InsertOption from '../components/InsertOption';
+import Options from '../components/Options';
+import Header from '../components/ui/Header';
+import ModalOption from '../components/ui/Modal';
 
-export default function Page() {
-	const { data: session } = useSession();
-	const router = useRouter();
+export default function Home() {
+	const [options, setOptions] = useState<string[]>([]);
+	const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
 
 	useEffect(() => {
-		if (session) {
-			router.push('/home');
+		const options = localStorage.getItem('options');
+
+		if (options) {
+			const json = JSON.parse(options);
+
+			setOptions(json);
 		}
-	}, [session]);
+	}, []);
+
+	useEffect(() => {
+		const json = JSON.stringify(options);
+
+		localStorage.setItem('options', json);
+	}, [options]);
+
+	function handleCloseModal() {
+		return setSelectedOption(undefined);
+	}
 
 	return (
 		<>
 			<Head>
-				<title>Indecision. Indencision It's not a decision / Indecision</title>
+				<title>Home / Indecision</title>
 			</Head>
-			{!session && (
-				<div
-					style={{
-						height: '100vh',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-					}}
-				>
-					<Button onClick={signIn} variant="github">
-						<GitHub width={24} height={24} fill="#fff" />
-						Login with GitHub
-					</Button>
+
+			<Header title="Indecision" subtitle="Put your decision in the hands of a computer." />
+			<div className="container">
+				<Action options={options} setSelectedOption={setSelectedOption} />
+				<div className="widget">
+					<Options options={options} setOptions={setOptions} />
+					<InsertOption options={options} setOptions={setOptions} />
 				</div>
-			)}
+				<ModalOption selectedOption={selectedOption} handleCloseModal={handleCloseModal} />
+			</div>
 		</>
 	);
 }

@@ -17,10 +17,9 @@
 	}
 
 	&__content {
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-
+		&Box button {
+			margin-top: $s-size;
+		}
 	}
 	
 	&__info {
@@ -46,6 +45,12 @@
 @media (min-width: $desktop-breakpoint) {
 	.header {
 		margin-bottom: $xl-size;
+
+		&__contentBox {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+		}
 
 		&__info {
 			&-content {
