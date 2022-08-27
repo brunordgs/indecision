@@ -15,21 +15,14 @@ export default function Header({ title, subtitle }: Props) {
 			<div className="container">
 				<div className="header__content">
 					<section>
-						<header className="header__contentBox">
-							<div>
-								<h1>{title}</h1>
-								<h2>{subtitle}</h2>
-							</div>
-
-							<Button onClick={() => signIn('github')} variant="github">
-								<GitHub width={24} height={24} fill="#fff" />
-								Login with GitHub
-							</Button>
+						<header>
+							<h1>{title}</h1>
+							<h2>{subtitle}</h2>
 						</header>
 					</section>
 
 					<section>
-						{session && (
+						{session ? (
 							<div className="header__info">
 								<div className="header__info-content">
 									<span>Hello, {session.user?.name?.split(' ')[0]}</span>
@@ -45,6 +38,11 @@ export default function Header({ title, subtitle }: Props) {
 									Logout
 								</Button>
 							</div>
+						) : (
+							<Button onClick={() => signIn('github')} variant="github">
+								<GitHub width={24} height={24} fill="#fff" />
+								Login with GitHub
+							</Button>
 						)}
 					</section>
 				</div>
